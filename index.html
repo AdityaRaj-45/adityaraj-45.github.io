@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Raj's Website</title>
+    <style>
+        /* General Styles */
+        :root {
+            --bg-color: #ffe5d9;
+            --text-color: #4a4a4a;
+            --accent-color: #f7a8a8;
+            --shader-color: rgba(255, 200, 200, 0.2);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+            overflow-x: hidden;
+        }
+
+        h1, h2 {
+            text-align: center;
+            font-family: 'Comic Sans MS', cursive;
+        }
+
+        /* Dark Mode */
+        body.dark {
+            --bg-color: #2d2a32;
+            --text-color: #e0e0e0;
+            --shader-color: rgba(50, 50, 50, 0.5);
+        }
+
+        /* Mobile Responsive */
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Button */
+        .dark-mode-toggle {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Shader Animation */
+        .shader {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: var(--shader-color);
+            border-radius: 50%;
+            animation: float 5s infinite alternate;
+        }
+
+        .shader:nth-child(2) {
+            top: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .shader:nth-child(3) {
+            top: 70%;
+            left: 30%;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px) translateX(0px);
+            }
+            100% {
+                transform: translateY(20px) translateX(20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="shader"></div>
+    <div class="shader"></div>
+    <div class="shader"></div>
+    <div class="container">
+        <h1>Welcome to Aditya Raj's Space</h1>
+        <h2>Age: 1800 | Gender: Male</h2>
+        <button class="dark-mode-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </div>
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark');
+        }
+    </script>
+</body>
+</html>
