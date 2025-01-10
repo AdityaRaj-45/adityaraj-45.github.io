@@ -6,22 +6,82 @@
     <title>Rock Paper Scissors Game</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             text-align: center;
             margin: 20px;
+            background: linear-gradient(135deg, #89f7fe, #66a6ff);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
         }
         .button-container button {
-            padding: 10px 20px;
+            padding: 15px 30px;
             margin: 10px;
-            font-size: 16px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
             cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        .button-container button:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.4);
         }
         .results {
             margin-top: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+        .anime-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 20%, rgba(255,255,255,0) 80%);
+            animation: glow 5s infinite;
+        }
+        @keyframes glow {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+        .rimuru {
+            margin-top: 20px;
+        }
+        .rimuru img {
+            width: 200px;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
         }
     </style>
 </head>
 <body>
+    <div class="anime-effect"></div>
     <h1>Rock Paper Scissors</h1>
     <p>Play for 3 rounds and see who wins!</p>
 
@@ -35,6 +95,10 @@
         <p id="round-result"></p>
         <p id="score"></p>
         <p id="final-result"></p>
+    </div>
+
+    <div class="rimuru">
+        <img src="https://i.imgur.com/rimuru_tempest.jpg" alt="Rimuru Tempest">
     </div>
 
     <script>
